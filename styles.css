@@ -9,6 +9,7 @@
 body {
     background-image: url(./images/bg-desktop.svg);
     background-color: hsl(257, 40%, 49%);
+    background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -73,22 +74,24 @@ button:hover {
     color: white;
 }
 
-.socials {
-    width: 10vw;
+#socials {
+    width: 9vw;
     position: absolute;
     right: 158px;
     bottom: 28px;
     display: flex;
+    justify-content: space-between;
 }
 
-.socials img {
+#socials img {
     width: 2rem;
     margin: 0 0.25rem;
+    filter: brightness(0) invert();
 }
 
-.socials img:hover {
-    color: hsl(300, 69%, 71%);
+#socials img:hover {
     cursor: pointer;
+    filter: invert(73%) sepia(24%) saturate(1992%) hue-rotate(229deg) brightness(93%) contrast(96%);
 }
 
 .attribution {
@@ -105,22 +108,73 @@ footer {
     left: 42%;
 }
 
-@media (max-width: 600px) and (min-width: 350px) {
+@media (max-width: 600px) and (min-width: 300px) {
     .logo img {
         margin: 2rem;
-        width: 8rem;
+        width: 8rem;    
     }
 
     body {
+        display: flex;
+        flex-wrap: wrap;
+        background-image: url(./images/bg-mobile.svg);
+    }
+
+    .main-container {
         display: flex;
         flex-wrap: wrap;
     }
 
     .illustration-mockups {
         width: 100vw;
+        height:36vh;
+        margin-top: 0.5rem;
     }
 
     .illustration-mockups img{
+        margin: 1rem 2rem;
         width: 80vw;
+    }
+
+    .content {
+        width: 100vw;
+        height: 70vh;
+    }
+
+    .content h1 {
+        margin: 6rem auto 0;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    .content p {
+        margin: 0.8rem auto;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    button {
+        margin: 0.8rem auto;
+        padding: 0.7rem 3.9rem;
+        font-size: 0.7rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    #socials {
+        position: inherit;
+        margin: 0.4rem auto;
+        width: 100vw;
+        justify-content: center;
+    }
+
+    #socials img {
+        width: 1.5rem;
+    }
+
+    footer {
+        position: inherit;
+        margin: auto;
     }
 }
